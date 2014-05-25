@@ -66,7 +66,7 @@ clean.data = function(df) {
   return(tidy)
 }
 
-## 8. Call the functions in 1 to 6 to create the final output and save the clean data
+## 8. Call the functions in 1 to 7 to create the final output and save the clean data
   download.unzip()
   merge.all <- merge.data()
   cx <- mean.std(merge.all$x)
