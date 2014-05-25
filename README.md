@@ -1,12 +1,12 @@
 Getting and Cleaning Data - Course Project
 ==================================================================
 
-1. Use plyr package for spiltting, applying and combining data.
+* Use plyr package for spiltting, applying and combining data.
 ```{r}
 library(plyr)
 ```
 
-2. Create a function to download and unzip the data
+* Create a function to download and unzip the data
 ```{r}
 download.unzip = function() {
   if (!file.exists("data")) {
@@ -21,7 +21,7 @@ download.unzip = function() {
 }
 ```
 
-3. Create a function to read and merge the data
+* Create a function to read and merge the data
 ```{r}
 merge.data = function() {
   training.x <- read.table("data/UCI HAR Dataset/train/X_train.txt")
@@ -39,7 +39,7 @@ merge.data = function() {
 }
 ```
 
-4. Calculate the mean and standard deviation for each measurement.
+* Calculate the mean and standard deviation for each measurement.
 ```{r}
 mean.std = function(df) {
   features <- read.table("data/UCI HAR Dataset/features.txt")
@@ -54,7 +54,7 @@ mean.std = function(df) {
 }
 ```
 
-5. Use descriptive activity names to name the activities in the data set
+* Use descriptive activity names to name the activities in the data set
 ```{r}
 activities = function(df) {
   colnames(df) <- "activity"
@@ -68,14 +68,14 @@ activities = function(df) {
 }
 ```
 
-6. Create a dataframe combining mean and std, acitivities and subjects
+* Create a dataframe combining mean and std, acitivities and subjects
 ```{r}
 bind.data <- function(x, y, subjects) {
   return(cbind(x, y, subjects))
 }
 ```
 
-7. Create an independent tidy dataset with the average of each variable for each activity and each subject.
+* Create an independent tidy dataset with the average of each variable for each activity and each subject.
 ```{r}
 clean.data = function(df) {
   tidy <- ddply(df, .(subject, activity), function(x) colMeans(x[,1:60]))
@@ -83,7 +83,7 @@ clean.data = function(df) {
 }
 ```
 
-8. Call the functions in 1 to 6 to create the final output and save the clean data
+* Call the functions in 1 to 6 to create the final output and save the clean data
 ```{r}
 download.unzip()
 merge.all <- merge.data()
