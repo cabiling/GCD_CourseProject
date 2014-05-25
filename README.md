@@ -1,7 +1,7 @@
 Getting and Cleaning Data - Course Project
 ==================================================================
 
-* Use plyr package for spiltting, applying and combining data.
+* Use plyr package for.
 ```{r}
 library(plyr)
 ```
