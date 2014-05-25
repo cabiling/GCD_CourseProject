@@ -83,7 +83,7 @@ clean.data = function(df) {
 }
 ```
 
-* Call the functions in 1 to 6 to create the final output and save the clean data
+* Call the functions above to create the final output and save the clean data
 ```{r}
 download.unzip()
 merge.all <- merge.data()
