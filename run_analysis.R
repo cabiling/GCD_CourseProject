@@ -1,4 +1,4 @@
-## 1. Use plyr package for spiltting, applying and combining data
+## 1. Use plyr package 
 library(plyr)
 
 ## 2. Create a function to download and unzip the data
